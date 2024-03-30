@@ -1,6 +1,5 @@
-import { UniqueEntityId } from '@/core/entities/uniqueEntityId'
 import { CustomerRepository } from '../../repository/types/customerRepository'
-import { Customer } from '@/domain/order/enterprise/entities/customer'
+import { Customer } from '@/domain/customer/enterprise/entities/customer'
 
 interface CreateCustomerUseCaseRequest {
   email: string
