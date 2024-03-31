@@ -1,10 +1,11 @@
 import { Entity } from '@/core/entities/entity'
 import { UniqueEntityId } from '@/core/entities/uniqueEntityId'
 import { Optional } from '@/core/types/optional'
+import { CardNumber } from './valueObject/cardNumber'
 
 export interface CreditCardProps {
   customerId: UniqueEntityId
-  cardNumber: string
+  cardNumber: CardNumber
   expirationDate: number
   securityCode: string
   nameOnCard: number
@@ -18,7 +19,7 @@ export class CreditCard extends Entity<CreditCardProps> {
   }
 
   get cardNumber() {
-    return this.props.cardNumber
+    return this.props.cardNumber.value
   }
 
   get expirationDate() {
@@ -38,7 +39,7 @@ export class CreditCard extends Entity<CreditCardProps> {
   }
 
   set cardNumber(value) {
-    this.props.cardNumber = value
+    this.props.cardNumber.value = value
   }
 
   set expirationDate(value) {
