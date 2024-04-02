@@ -6,7 +6,7 @@ import { CardNumber } from './valueObject/cardNumber'
 export interface CreditCardProps {
   customerId: UniqueEntityId
   cardNumber: CardNumber
-  expirationDate: number
+  expirationDate: Date
   securityCode: string
   nameOnCard: number
   createdAt: Date
