@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest'
 import { SecurityCode } from '../securityCode'
 
 describe('SecurityCode', () => {
-
   it('should return security code', () => {
     const expected = '123'
     const cardNumber = SecurityCode.create('123')

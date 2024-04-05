@@ -17,18 +17,18 @@ export class CreateCustomerUseCase {
   async execute({
     email,
     name,
-    phone
+    phone,
   }: CreateCustomerUseCaseRequest): Promise<CreateCustomerUseCaseResponse> {
     const customer = Customer.create({
       email,
       name,
-      phone
+      phone,
     })
 
     await this.customerRepository.create(customer)
 
     return {
-      customer
+      customer,
     }
   }
 }

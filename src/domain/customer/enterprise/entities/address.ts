@@ -13,7 +13,6 @@ export interface AddressProps {
 }
 
 export class Address extends Entity<AddressProps> {
-
   get customerId() {
     return this.props.customerId
   }
@@ -62,12 +61,17 @@ export class Address extends Entity<AddressProps> {
     this.props.country = value
   }
 
-  static create(props: Optional<AddressProps, 'createdAt'>,
-  id?: UniqueEntityId,) {
-    const customer = new Address({
-      ...props,
-      createdAt: new Date()
-    }, id)
+  static create(
+    props: Optional<AddressProps, 'createdAt'>,
+    id?: UniqueEntityId,
+  ) {
+    const customer = new Address(
+      {
+        ...props,
+        createdAt: new Date(),
+      },
+      id,
+    )
 
     return customer
   }

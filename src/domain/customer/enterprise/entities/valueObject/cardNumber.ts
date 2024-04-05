@@ -6,26 +6,26 @@ export class CardNumber {
   }
 
   private isValid() {
-    let digits = this.cardNumber.toString().split('').map(Number);
-    let sum = 0;
-    let length = digits.length;
-    let isEven = false;
+    const digits = this.cardNumber.toString().split('').map(Number)
+    let sum = 0
+    const length = digits.length
+    let isEven = false
 
     for (let i = length - 1; i >= 0; i--) {
-        let digit = digits[i];
+      let digit = digits[i]
 
-        if (isEven) {
-            digit *= 2;
-            if (digit > 9) {
-                digit -= 9;
-            }
+      if (isEven) {
+        digit *= 2
+        if (digit > 9) {
+          digit -= 9
         }
+      }
 
-        sum += digit;
-        isEven = !isEven;
+      sum += digit
+      isEven = !isEven
     }
 
-    return (sum % 10 === 0);
+    return sum % 10 === 0
   }
 
   get isValidCardNumber() {

@@ -13,7 +13,6 @@ export interface CreditCardProps {
 }
 
 export class CreditCard extends Entity<CreditCardProps> {
-
   get customerId() {
     return this.props.customerId
   }
@@ -54,12 +53,17 @@ export class CreditCard extends Entity<CreditCardProps> {
     this.props.nameOnCard = value
   }
 
-  static create(props: Optional<CreditCardProps, 'createdAt'>,
-  id?: UniqueEntityId,) {
-    const creditCard = new CreditCard({
-      ...props,
-      createdAt: new Date()
-    }, id)
+  static create(
+    props: Optional<CreditCardProps, 'createdAt'>,
+    id?: UniqueEntityId,
+  ) {
+    const creditCard = new CreditCard(
+      {
+        ...props,
+        createdAt: new Date(),
+      },
+      id,
+    )
 
     return creditCard
   }

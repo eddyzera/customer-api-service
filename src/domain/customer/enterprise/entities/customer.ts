@@ -10,7 +10,6 @@ export interface CustomerProps {
 }
 
 export class Customer extends Entity<CustomerProps> {
-
   get name() {
     return this.props.name
   }
@@ -39,12 +38,17 @@ export class Customer extends Entity<CustomerProps> {
     this.props.phone = value
   }
 
-  static create(props: Optional<CustomerProps, 'createdAt'>,
-  id?: UniqueEntityId,) {
-    const customer = new Customer({
-      ...props,
-      createdAt: new Date()
-    }, id)
+  static create(
+    props: Optional<CustomerProps, 'createdAt'>,
+    id?: UniqueEntityId,
+  ) {
+    const customer = new Customer(
+      {
+        ...props,
+        createdAt: new Date(),
+      },
+      id,
+    )
 
     return customer
   }
