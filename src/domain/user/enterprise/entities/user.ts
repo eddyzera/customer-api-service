@@ -5,7 +5,7 @@ import { Optional } from '@/core/types/optional'
 export interface UserProps {
   name: string
   email: string
-  password: string
+  password_hash: string
   createdAt: Date
 }
 
@@ -18,6 +18,10 @@ export class User extends Entity<UserProps> {
     return this.props.email
   }
 
+  get password() {
+    return this.props.password_hash
+  }
+
   get createdAt() {
     return this.props.createdAt
   }
@@ -28,6 +32,10 @@ export class User extends Entity<UserProps> {
 
   set email(value) {
     this.props.email = value
+  }
+
+  set password(value) {
+    this.props.password_hash = value
   }
 
   static create(

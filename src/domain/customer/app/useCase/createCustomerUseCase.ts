@@ -1,4 +1,4 @@
-import { CustomerRepository } from '../../repository/types/customerRepository'
+import { CustomerRepository } from '../repository/types/customerRepository'
 import { Customer } from '@/domain/customer/enterprise/entities/customer'
 
 interface CreateCustomerUseCaseRequest {
