@@ -38,10 +38,7 @@ export class User extends Entity<UserProps> {
     this.props.password_hash = value
   }
 
-  static create(
-    props: Optional<UserProps, 'createdAt'>,
-    id?: UniqueEntityId,
-  ) {
+  static create(props: Optional<UserProps, 'createdAt'>, id?: UniqueEntityId) {
     const user = new User(
       {
         ...props,
